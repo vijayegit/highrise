@@ -1,5 +1,7 @@
 package com.highrise.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,28 +22,31 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void save(User user) {
 		// TODO Auto-generated method stub
-		
+		userDao.saveUser(user);
 	}
 
     @Transactional
 	@Override
 	public void update(User user) {
-		// TODO Auto-generated method stub
+    	userDao.saveOrUpdate(user);
 		
 	}
 
     @Transactional
 	@Override
 	public void delete(User user) {
-		// TODO Auto-generated method stub
+    	 user = userDao.findById(user.getUserName());
+         if (user != null) {
+             userDao.delete(user);
+         }
 		
 	}
 
-    @Transactional(readOnly=false)
+     
 	@Override
-	public User findByStockCode(int userID) {
+	public void deleteUserById(int userID) {
 		// TODO Auto-generated method stub
-		return null;
+		userDao.deleteUserById(userID);
 	}
 
  

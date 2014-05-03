@@ -21,8 +21,7 @@ import com.highrise.service.UserService;
 @Controller
 public class HomeController {
 	
-	@Autowired
-	private UserService userService;
+	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	/**
@@ -38,10 +37,8 @@ public class HomeController {
 		    	  new ClassPathXmlApplicationContext("spring/appServlet/servlet-context.xml");*/
 	 
 	//	UserService userBo = (UserService)appContext.getBean("userBO");
-		User user = new User();
-		user.setUserName("ruben");
-		user.setUserType("Engineer");
-		userService.save(user);
+		
+		//test git
 		String formattedDate = dateFormat.format(date);
 		
 		model.addAttribute("serverTime", formattedDate );

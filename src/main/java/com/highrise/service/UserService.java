@@ -8,5 +8,7 @@ public interface UserService {
 	void save(User user);
 	void update(User user);
 	void delete(User user);
-	User findByStockCode(int userID);
+	 
+	
+	 void deleteUserById(int userID);
 }

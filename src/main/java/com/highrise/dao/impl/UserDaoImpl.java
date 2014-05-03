@@ -25,4 +25,13 @@ public class UserDaoImpl extends AbstractDaoImpl<User, String> implements UserDa
     public List findUsers(String userName) {
         return findByCriteria(Restrictions.like("userName", userName, MatchMode.START));
     }
+    
+    
+     
+
+	@Override
+	public void deleteUserById(int userID) {
+		deleteUserById(userID);
+		
+	}
 }
