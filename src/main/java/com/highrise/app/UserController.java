@@ -23,7 +23,7 @@ public class UserController {
 		user.setUserName("test1");
 		user.setUserType("Engineer");
 		userService.save(user);		
-		return null;
+		return "home";
 		
 	}
 	
